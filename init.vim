@@ -74,7 +74,7 @@ set nospell
 
 " Plugins here
 call plug#begin('~/.config/nvim/plugged')
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " Use release branch (Recommend)
 " Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
@@ -89,6 +89,10 @@ Plug 'beeender/Comrade'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
+Plug 'epmatsw/ag.vim'
+Plug 'jiangmiao/auto-pairs'
+let g:AutoPairsMultilineClose = 0
+let g:AutoPairsMapSpace = 0
 call plug#end()
 
 " UltiSnips config
@@ -153,10 +157,6 @@ cnoreabbrev <expr> q getcmdtype() == ":" && (getcmdline() == 'q' && len(filter(r
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 nmap <C-n> :NERDTreeToggle<CR>
-
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 
 " For window splits -----------------
 " nnoremap <C-J> <C-W><C-J>
